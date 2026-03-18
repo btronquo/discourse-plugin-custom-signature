@@ -2,7 +2,7 @@
 
 # name: discourse-plugin-custom-signature
 # about: Allows users to add a custom Markdown/HTML signature to all their posts
-# version: 1.0.0
+# version: 1.0.1
 # authors: Boris Tronquoy
 # url: https://github.com/btronquo/discourse-plugin-custom-signature
 
@@ -23,12 +23,12 @@ after_initialize do
   add_to_class(:user, :can_have_signature?) do
     return false unless SiteSetting.custom_signatures_enabled
 
-    case SiteSetting.custom_signatures_allowed_groups
-    when "staff"
-      staff?
-    else # "all"
-      true
-    end
+    allowed = SiteSetting.custom_signatures_allowed_groups.to_s
+    # Empty list = nobody (plugin enabled but no group selected yet)
+    return false if allowed.blank?
+
+    allowed_ids = allowed.split("|").map(&:to_i)
+    GroupUser.where(user_id: id, group_id: allowed_ids).exists?
   end
 
   # ── Serializers ────────────────────────────────────────────────────────────

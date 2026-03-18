@@ -23,13 +23,13 @@ export default class SignatureField extends Component {
     this.args.outletArgs.model?.custom_fields?.user_signature ?? "";
 
   // ── Permission check ──────────────────────────────────────────────────────
+  // Relies on the `can_have_signature` boolean exposed by current_user_serializer.
+  // The real group-membership check happens server-side — no need to replicate
+  // the group_list logic here.
 
   get canHaveSignature() {
     if (!this.siteSettings.custom_signatures_enabled) return false;
-    if (this.siteSettings.custom_signatures_allowed_groups === "staff") {
-      return !!this.currentUser?.staff;
-    }
-    return true; // "all"
+    return !!this.currentUser?.can_have_signature;
   }
 
   // ── Character counter helpers ─────────────────────────────────────────────

@@ -5,11 +5,8 @@ plugins:
     type: bool
 
   custom_signatures_allowed_groups:
-    default: "all"
-    type: enum
-    choices:
-      - staff
-      - all
+    default: "3"
+    type: group_list
     client: true
 
   custom_signatures_max_length:
