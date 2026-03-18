@@ -1,0 +1,11 @@
+fr:
+  js:
+    user:
+      signature:
+        title: "Signature"
+        description: "Apparaît en bas de tous vos messages. Supporte le Markdown et le HTML basique."
+        placeholder: "Rédigez votre signature ici…"
+        characters_remaining:
+          one: "%{count} caractère restant"
+          other: "%{count} caractères restants"
+        near_limit: "Proche de la limite de caractères"

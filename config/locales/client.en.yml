@@ -1,0 +1,11 @@
+en:
+  js:
+    user:
+      signature:
+        title: "Signature"
+        description: "Appears at the bottom of all your posts. Supports Markdown and basic HTML."
+        placeholder: "Write your signature here…"
+        characters_remaining:
+          one: "%{count} character remaining"
+          other: "%{count} characters remaining"
+        near_limit: "Approaching the character limit"

@@ -1,0 +1,13 @@
+fr:
+  site_settings:
+    custom_signatures_enabled: "Activer les signatures personnalisées"
+    custom_signatures_allowed_groups: "Qui peut utiliser une signature"
+    custom_signatures_max_length: "Longueur maximale de la signature (caractères)"
+
+  custom_signatures_allowed_groups:
+    staff: "Staff uniquement (admins & modérateurs)"
+    all: "Tous les utilisateurs"
+
+  user:
+    signature:
+      too_long: "La signature est trop longue (maximum %{max} caractères autorisés)"

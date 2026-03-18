@@ -1,0 +1,20 @@
+plugins:
+  custom_signatures_enabled:
+    default: true
+    client: true
+    type: bool
+
+  custom_signatures_allowed_groups:
+    default: "all"
+    type: enum
+    choices:
+      - staff
+      - all
+    client: true
+
+  custom_signatures_max_length:
+    default: 500
+    min: 50
+    max: 5000
+    type: integer
+    client: true
