@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# name: discourse-custom-signatures
+# name: discourse-plugin-custom-signature
 # about: Allows users to add a custom Markdown/HTML signature to all their posts
 # version: 1.0.0
 # authors: Boris Tronquoy
