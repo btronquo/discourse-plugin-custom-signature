@@ -29,7 +29,8 @@ export default class SignatureField extends Component {
 
   get canHaveSignature() {
     if (!this.siteSettings.custom_signatures_enabled) return false;
-    return !!this.currentUser?.can_have_signature;
+    // Discourse camelises JSON keys on the client: can_have_signature → canHaveSignature
+    return !!this.currentUser?.canHaveSignature;
   }
 
   // ── Character counter helpers ─────────────────────────────────────────────

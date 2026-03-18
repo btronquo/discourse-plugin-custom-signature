@@ -2,7 +2,7 @@
 
 # name: discourse-plugin-custom-signature
 # about: Allows users to add a custom Markdown/HTML signature to all their posts
-# version: 1.0.1
+# version: 1.0.2
 # authors: Boris Tronquoy
 # url: https://github.com/btronquo/discourse-plugin-custom-signature
 
