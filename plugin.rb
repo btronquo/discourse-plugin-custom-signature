@@ -28,6 +28,11 @@ after_initialize do
     return false if allowed.blank?
 
     allowed_ids = allowed.split("|").map(&:to_i)
+
+    # Group ID 0 is Discourse's virtual "everyone" group — it has no rows in
+    # group_users, so we must handle it explicitly.
+    return true if allowed_ids.include?(0)
+
     GroupUser.where(user_id: id, group_id: allowed_ids).exists?
   end
 
